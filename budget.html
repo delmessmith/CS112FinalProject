@@ -10,26 +10,29 @@
 <h1>Budget Calculator</h1>
 <h4>Input Person A and Person B's contributions to the shared expenses</h4>
 <table>
-    <tr><td>Person A</td><td><input type="text" id="txtContA"></td><td>Person B</td><td><input type="text" id="txtContB"></td></tr>
+    <tr><td>Person A</td><td><input type="text" id="txtContA"></td><td>Person B</td><td><input type="text" id="txtContB"></td> <td><div id="divLowFunds"></div></td></tr>
 </table>
 <h4>Check all categories that you would like enabled and input their values</h4>
 <table>
     <thead>    <tr><td></td>               <td>Category</td> <td>Total</td><td>Person A Contribution</td> <td>Person B Contribution</td></tr></thead>
-    <tr><td><input type="checkbox" id="chkRent"></td><td>Rent</td>                  <td><input type="text" id="txtRent" disabled></td>
+    <tr><td><input type="checkbox" id="chkRent" onclick="isChecked('Rent')"></td><td>Rent</td>                  <td>$<input type="text" id="txtRent" disabled ></td>
     <td><div id="divRentA"></div></td><td><div id="divRentB"></div></td>  </tr>
-    <tr><td><input type="checkbox" id="chkMortgage"></td><td>Mortgage</td>          <td><input type="text" id="txtMortgage" disabled></td></tr>
-    <tr><td><input type="checkbox" id="chkWater"></td><td>Water</td>                <td><input type="text" id="txtWater" disabled></td></tr>
-    <tr><td><input type="checkbox" id="chkGas"></td><td>Gas</td>                    <td><input type="text" id="txtGas" disabled></td></tr>
-    <tr><td><input type="checkbox" id="chkElectric"></td><td>Electric</td>          <td><input type="text" id="txtElectric" disabled></td></tr>
-    <tr><td><input type="checkbox" id="chkTV"></td><td>TV</td>                      <td><input type="text" id="txtTV" disabled></td></tr>
-    <tr><td><input type="checkbox" id="chkInternet"></td><td>Internet</td>          <td><input type="text" id="txtInternet" disabled></td></tr>
-    <tr><td><input type="checkbox" id="chkPhone"></td><td>Phone</td>                <td><input type="text" id="txtPhone" disabled></td></tr>
-    <tr><td><input type="checkbox" id="chkPet"></td><td>Pet Supplies/Vet</td>       <td><input type="text" id="txtPet" disabled></td></tr>
-    <tr><td><input type="checkbox" id="chkCreditCard"></td><td>Credit Card</td>     <td><input type="text" id="txtCreditCard" disabled></td></tr>
-    <tr><td><input type="checkbox" id="chkGroceries"></td><td>Groceries</td>        <td><input type="text" id="txtGroceries" disabled></td></tr>
-    <tr><td><input type="checkbox" id="chkRestaurants"></td><td>Restaurants</td>    <td><input type="text" id="txtRestaurants" disabled></td></tr>
-    <tr><td><input type="checkbox" id="chkEntertainment"></td><td>Entertainment</td><td><input type="text" id="txtEntertainment" disabled></td></tr>
-    <tr><td><input type="checkbox" id="chkOther"></td><td>Other</td>                <td><input type="text" id="txtOther" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkMortgage" onclick="isChecked('Mortgage')"></td><td>Mortgage</td>          <td>$<input type="text" id="txtMortgage" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkWater" onclick="isChecked('Water')"></td><td>Water</td>                <td>$<input type="text" id="txtWater" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkGas" onclick="isChecked('Gas')"></td><td>Gas</td>                    <td>$<input type="text" id="txtGas" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkElectric" onclick="isChecked('Electric')"></td><td>Electric</td>          <td>$<input type="text" id="txtElectric" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkTV" onclick="isChecked('TV')"></td><td>TV</td>                      <td>$<input type="text" id="txtTV" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkInternet" onclick="isChecked('Internet')"></td><td>Internet</td>          <td>$<input type="text" id="txtInternet" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkCellPhone" onclick="isChecked('CellPhone')"></td><td>Cell Phone</td>                <td>$<input type="text" id="txtCellPhone" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkHomePhone" onclick="isChecked('HomePhone')"></td><td>Home Phone</td>                <td>$<input type="text" id="txtHomePhone" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkPet" onclick="isChecked('Pet')"></td><td>Pet Supplies/Vet</td>       <td>$<input type="text" id="txtPet" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkCreditCard" onclick="isChecked('CreditCard')"></td><td>Credit Card</td>     <td>$<input type="text" id="txtCreditCard" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkGroceries" onclick="isChecked('Groceries')"></td><td>Groceries</td>        <td>$<input type="text" id="txtGroceries" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkRestaurants" onclick="isChecked('Restaurants')"></td><td>Restaurants</td>    <td>$<input type="text" id="txtRestaurants" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkEntertainment" onclick="isChecked('Entertainment')"></td><td>Entertainment</td><td>$<input type="text" id="txtEntertainment" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkSavings" onclick="isChecked('Savings')"></td><td>Savings</td>                <td>$<input type="text" id="txtSavings" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkInvestments" onclick="isChecked('Investments')"></td><td>Investments</td>    <td>$<input type="text" id="txtInvestments" disabled></td></tr>
+    <tr><td><input type="checkbox" id="chkOther" onclick="isChecked('Other')"></td><td>Other</td>                <td>$<input type="text" id="txtOther" disabled></td></tr>
 
 </table>
 <br>
