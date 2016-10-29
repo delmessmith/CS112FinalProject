@@ -2,3 +2,10 @@ img {width:150px;}
 input[type="text"] {
     width: 30px;}
 thead{font-weight: bold}
+input [type="textbox"]{
+    width: 75px;}
+#txtDate,#txtGasAmnt,#txtSaleAmnt {
+    width: 75px;}
+#Date, #GasAmnt, #Price{
+    width: 100px;
+}

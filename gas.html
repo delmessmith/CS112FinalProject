@@ -8,5 +8,39 @@
 </head>
 <body>
 <h1>Gas Tracker</h1>
+
+<p>Input the date gas was purchased, the amount of gas purchased, and the amount of money spent. Click "Post Data" to
+post the data to the table below.</p>
+<table>
+    <tr><td>Date: </td><td><input type="text" id="txtDate"></td></tr>
+    <tr><td>Gas Amount: </td><td><input type="text" id="txtGasAmnt"></td></tr>
+    <tr><td>Sale Amount: </td><td><input type="text" id="txtSaleAmnt"></td></tr>
+</table>
+<button id="btnPostData" onclick="AddtoTable()">Post Data</button>
+
+<table id="GasTable">
+    <thead id="GasTableHead"><tr><td id="Date">Date</td><td id="GasAmnt">Gas Amount</td>
+        <td id="SaleAmnt">Sale Amount</td></tr></thead>
+<tbody id="GasTableBdy">
+
+</tbody>
+</table>
+<br>
+Total Gas Purchased: <div id="divTotalGas"></div>
+Total Sales: <div id="divTotalGasSales"></div>
+<button id="SaveData" onclick="Save()">Save Data to Local Storage</button>
+
+<script>
+    function AddtoTable() {
+        var table = document.getElementById("GasTableBdy");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        cell1.innerHTML = document.getElementById("txtDate").value;
+        cell2.innerHTML = document.getElementById("txtGasAmnt").value;
+        cell3.innerHTML = document.getElementById("txtSaleAmnt").value;
+    }
+</script>
 </body>
 </html>
