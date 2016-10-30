@@ -13,8 +13,8 @@
 post the data to the table below.</p>
 <table>
     <tr><td>Date: </td><td><input type="text" id="txtDate"></td></tr>
-    <tr><td>Gas Amount: </td><td><input type="text" id="txtGasAmnt"></td></tr>
-    <tr><td>Sale Amount: </td><td><input type="text" id="txtSaleAmnt"></td></tr>
+    <tr><td>Gas Amount (in Gallons): </td><td><input type="text" id="txtGasAmnt"></td></tr>
+    <tr><td>Sale Amount (in USD): </td><td><input type="text" id="txtSaleAmnt"></td></tr>
 </table>
 <button id="btnPostData" onclick="AddtoTable()">Post Data</button>
 
@@ -28,7 +28,11 @@ post the data to the table below.</p>
 <br>
 Total Gas Purchased: <div id="divTotalGas"></div>
 Total Sales: <div id="divTotalGasSales"></div>
-<button id="SaveData" onclick="Save()">Save Data to Local Storage</button>
+<button id="btnSaveData" onclick="Save()">Save Data to Local Storage</button> <button id="btnClearData" onclick="Clear">Clear Local Storage</button>
+
+<br><br>
+
+<a href="index.html">Home</a> <a href="budget.html">Budget Calculator</a>
 
 <script>
     function AddtoTable() {

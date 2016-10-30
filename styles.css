@@ -9,3 +9,4 @@ input [type="textbox"]{
 #Date, #GasAmnt, #Price{
     width: 100px;
 }
+body {background-color: lightblue}
