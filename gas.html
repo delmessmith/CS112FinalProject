@@ -28,23 +28,11 @@ post the data to the table below.</p>
 <br>
 Total Gas Purchased: <div id="divTotalGas"></div>
 Total Sales: <div id="divTotalGasSales"></div>
-<button id="btnSaveData" onclick="Save()">Save Data to Local Storage</button> <button id="btnClearData" onclick="Clear">Clear Local Storage</button>
+<button id="btnSaveData" onclick="Save()">Save Data to Local Storage</button> <button id="btnClearData" onclick="Clear()">Clear Local Storage</button>
 
 <br><br>
 
 <a href="index.html">Home</a> <a href="budget.html">Budget Calculator</a>
 
-<script>
-    function AddtoTable() {
-        var table = document.getElementById("GasTableBdy");
-        var row = table.insertRow(-1);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        cell1.innerHTML = document.getElementById("txtDate").value;
-        cell2.innerHTML = document.getElementById("txtGasAmnt").value;
-        cell3.innerHTML = document.getElementById("txtSaleAmnt").value;
-    }
-</script>
 </body>
 </html>

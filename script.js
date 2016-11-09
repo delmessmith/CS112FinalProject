@@ -37,13 +37,36 @@ function isChecked(Category) {
 }
 
 function Calculate() {
-    ValidateInput();
+    Rent = GetInput('Rent');
+    Mortgage = GetInput('Mortgage');
+    Water = GetInput('Water');
+    Gas = GetInput('Gas');
+    Electric = GetInput('Electric');
+    TV = GetInput('TV');
+    Internet = GetInput('Internet');
+    CellPhone = GetInput('CellPhone');
+    HomePhone = GetInput('HomePhone');
+    Pet = GetInput('Pet');
+    CreditCard = GetInput('CreditCard');
+    Groceries = GetInput('Groceries');
+    Restaurants = GetInput('Restaurants');
+    Entertainment = GetInput('Entertainment');
+    Savings = GetInput('Savings');
+    Investments = GetInput('Investments');
+    Other = GetInput('Other');
 
+    CalcTotal();
+
+    alert(CategoriesTotal);
     DisplayLowFundsMsg();
 }
 
-function GetInput() {
-    
+function GetInput(category) {
+    var categoryAmnt;
+    if (parseFloat($('txt' + category).value) > 0){
+    categoryAmnt = parseFloat($("txt" + category).value);}
+    else {categoryAmnt = 0}
+    return categoryAmnt
 }
 
 function ValidateInput(Category) {
@@ -60,4 +83,21 @@ function DisplayLowFundsMsg() {
     if (CategoriesTotal > ContTotal){
         $("divLowFunds").innerHTML = "You are over budget!"
     } else $("divLowFunds").innerHTML = "";
+}
+
+function AddtoTable() {
+    var table = document.getElementById("GasTableBdy");
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    cell1.innerHTML = document.getElementById("txtDate").value;
+    cell2.innerHTML = document.getElementById("txtGasAmnt").value;
+    cell3.innerHTML = document.getElementById("txtSaleAmnt").value;
+}
+
+function CalcTotal() {
+    CategoriesTotal = Rent + Mortgage + Water + Gas + Electric + TV + Internet + CellPhone +
+        HomePhone + Pet + CreditCard + Groceries + Restaurants + Entertainment + Savings +
+        Investments + Other;
 }
