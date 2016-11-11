@@ -19,8 +19,10 @@ var Savings = 0;
 var Investments = 0;
 var Other = 0;
 
-var CategoriesTotal = 5;
-var ContTotal = 4;
+var CategoriesTotal = 0;
+var ContPersonA = 0;
+var ContPersonB = 0;
+var ContTotal = 0;
 
 
 function $(element) {
@@ -55,9 +57,12 @@ function Calculate() {
     Investments = GetInput('Investments');
     Other = GetInput('Other');
 
-    CalcTotal();
+    CalcCategoriesTotal();
 
     alert(CategoriesTotal);
+    ContPersonA = GetInput("ContA");
+    ContPersonB = GetInput("ContB");
+    alert(ContPersonA + " " + ContPersonB);
     DisplayLowFundsMsg();
 }
 
@@ -96,7 +101,7 @@ function AddtoTable() {
     cell3.innerHTML = document.getElementById("txtSaleAmnt").value;
 }
 
-function CalcTotal() {
+function CalcCategoriesTotal() {
     CategoriesTotal = Rent + Mortgage + Water + Gas + Electric + TV + Internet + CellPhone +
         HomePhone + Pet + CreditCard + Groceries + Restaurants + Entertainment + Savings +
         Investments + Other;
