@@ -57,13 +57,19 @@ function Calculate() {
     Investments = GetInput('Investments');
     Other = GetInput('Other');
 
-    CalcCategoriesTotal();
+    CategoriesTotal = CalcCategoriesTotal();
 
     alert(CategoriesTotal);
     ContPersonA = GetInput("ContA");
     ContPersonB = GetInput("ContB");
     alert(ContPersonA + " " + ContPersonB);
-    DisplayLowFundsMsg();
+    ContTotal = ContPersonA + ContPersonB;
+    alert(ContTotal);
+    if (CategoriesTotal > ContTotal){
+        alert("Dude, you spent more money than there is available!");
+        DisplayLowFundsMsg();
+    }
+
 }
 
 function GetInput(category) {
@@ -102,7 +108,11 @@ function AddtoTable() {
 }
 
 function CalcCategoriesTotal() {
-    CategoriesTotal = Rent + Mortgage + Water + Gas + Electric + TV + Internet + CellPhone +
-        HomePhone + Pet + CreditCard + Groceries + Restaurants + Entertainment + Savings +
-        Investments + Other;
+    var total;
+
+    total = Rent + Mortgage + Water + Gas + Electric + TV + Internet + CellPhone +
+    HomePhone + Pet + CreditCard + Groceries + Restaurants + Entertainment + Savings +
+    Investments + Other;
+
+    return total
 }
