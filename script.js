@@ -24,6 +24,8 @@ var ContPersonA = 0;
 var ContPersonB = 0;
 var ContTotal = 0;
 
+var PercentContPersonA = 0;
+var PercentContPersonB = 0;
 
 function $(element) {
    return document.getElementById(element);
@@ -70,6 +72,10 @@ function Calculate() {
         DisplayLowFundsMsg();
     }
 
+    PercentContPersonA = ContPersonA/ContTotal;
+    PercentContPersonB = ContPersonB/ContTotal;
+
+    alert(PercentContPersonA + " " + PercentContPersonB)
 }
 
 function GetInput(category) {
