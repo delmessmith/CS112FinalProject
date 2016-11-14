@@ -68,7 +68,7 @@ function Calculate() {
     ContTotal = ContPersonA + ContPersonB;
     alert(ContTotal);
     if (CategoriesTotal > ContTotal){
-        alert("Dude, you spent more money than there is available!");
+        alert("You spent more money than there is available!");
         DisplayLowFundsMsg();
     }
 
@@ -103,14 +103,14 @@ function DisplayLowFundsMsg() {
 }
 
 function AddtoTable() {
-    var table = document.getElementById("GasTableBdy");
+    var table = $("GasTableBdy");
     var row = table.insertRow(-1);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    cell1.innerHTML = document.getElementById("txtDate").value;
-    cell2.innerHTML = document.getElementById("txtGasAmnt").value;
-    cell3.innerHTML = document.getElementById("txtSaleAmnt").value;
+    var date = row.insertCell(0);
+    var gas = row.insertCell(1);
+    var price = row.insertCell(2);
+    date.innerHTML = $("inputDate").value;
+    gas.innerHTML = GetInput("GasAmnt");
+    price.innerHTML = GetInput("SaleAmnt");
 }
 
 function CalcCategoriesTotal() {
