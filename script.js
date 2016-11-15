@@ -81,19 +81,9 @@ function Calculate() {
 function GetInput(category) {
     var categoryAmnt;
     if (parseFloat($('txt' + category).value) > 0){
-    categoryAmnt = parseFloat($("txt" + category).value);}
+    categoryAmnt = parseFloat($("txt" + category).value.toFixed(2))}
     else {categoryAmnt = 0}
     return categoryAmnt
-}
-
-function ValidateInput(Category) {
-    GetInput(Category);
-    
-    if (parseFloat("txt" + Category) >= 0){
-        
-    }
-        
-    else {alert("Please Enter a Valid, Positive Number")}
 }
 
 function DisplayLowFundsMsg() {
@@ -109,8 +99,8 @@ function AddtoTable() {
     var gas = row.insertCell(1);
     var price = row.insertCell(2);
     date.innerHTML = $("inputDate").value;
-    gas.innerHTML = GetInput("GasAmnt");
-    price.innerHTML = GetInput("SaleAmnt");
+    gas.innerHTML = GetInput("GasAmnt") + " Gallon(s)";
+    price.innerHTML = "$" + GetInput("SaleAmnt");
 }
 
 function CalcCategoriesTotal() {
