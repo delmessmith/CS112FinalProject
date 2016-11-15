@@ -81,7 +81,7 @@ function Calculate() {
 function GetInput(category) {
     var categoryAmnt;
     if (parseFloat($('txt' + category).value) > 0){
-    categoryAmnt = parseFloat($("txt" + category).value.toFixed(2))}
+    categoryAmnt = parseFloat($("txt" + category).value)}
     else {categoryAmnt = 0}
     return categoryAmnt
 }
