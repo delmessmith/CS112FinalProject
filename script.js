@@ -27,6 +27,12 @@ var ContTotal = 0;
 var PercentContPersonA = 0;
 var PercentContPersonB = 0;
 
+var GasAmntArray = [];
+var GasTotalAmnt = 0;
+
+var GasPricesArray = [];
+var GasPriceTotal = 0;
+
 function $(element) {
    return document.getElementById(element);
 }
@@ -81,7 +87,7 @@ function Calculate() {
 function GetInput(category) {
     var categoryAmnt;
     if (parseFloat($('txt' + category).value) > 0){
-    categoryAmnt = parseFloat($("txt" + category).value.toFixed(2))}
+    categoryAmnt = parseFloat($("txt" + category).value)}
     else {categoryAmnt = 0}
     return categoryAmnt
 }
@@ -98,10 +104,31 @@ function AddtoTable() {
     var date = row.insertCell(0);
     var gas = row.insertCell(1);
     var price = row.insertCell(2);
+    GasAmntArray.push(GetInput("GasAmnt"));
+    GasPricesArray.push(GetInput("SaleAmnt"));
+
     date.innerHTML = $("inputDate").value;
     gas.innerHTML = GetInput("GasAmnt") + " Gallon(s)";
     price.innerHTML = "$" + GetInput("SaleAmnt");
+
+    alert(GasAmntArray);
+    alert(GasPricesArray);
+
+        var GasAmntSum = 0;
+        var GasSaleSum = 0;
+
+    for (i = 0; i < GasAmntArray.length; i++){
+        GasAmntSum += GasAmntArray[i];
+    }
+    $("divTotalGas").innerHTML = GasAmntSum.toFixed(2) + " Gallons";
+
+    for (i = 0; i < GasPricesArray.length; i++){
+        GasSaleSum += GasPricesArray[i];
+    }
+    $("divTotalGasSales").innerHTML = "$" + GasSaleSum.toFixed(2);
 }
+
+
 
 function CalcCategoriesTotal() {
     var total;
