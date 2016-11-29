@@ -34,7 +34,7 @@ var GasPricesArray = [];
 var GasPriceTotal = 0;
 
 function $(element) {
-   return document.getElementById(element);
+    return document.getElementById(element);
 }
 
 function isChecked(Category) {
@@ -87,7 +87,7 @@ function Calculate() {
 function GetInput(category) {
     var categoryAmnt;
     if (parseFloat($('txt' + category).value) > 0){
-    categoryAmnt = parseFloat($("txt" + category).value)}
+        categoryAmnt = parseFloat($("txt" + category).value)}
     else {categoryAmnt = 0}
     return categoryAmnt
 }
@@ -114,8 +114,8 @@ function AddtoTable() {
     alert(GasAmntArray);
     alert(GasPricesArray);
 
-        var GasAmntSum = 0;
-        var GasSaleSum = 0;
+    var GasAmntSum = 0;
+    var GasSaleSum = 0;
 
     for (i = 0; i < GasAmntArray.length; i++){
         GasAmntSum += GasAmntArray[i];
@@ -134,8 +134,8 @@ function CalcCategoriesTotal() {
     var total;
 
     total = Rent + Mortgage + Water + Gas + Electric + TV + Internet + CellPhone +
-    HomePhone + Pet + CreditCard + Groceries + Restaurants + Entertainment + Savings +
-    Investments + Other;
+        HomePhone + Pet + CreditCard + Groceries + Restaurants + Entertainment + Savings +
+        Investments + Other;
 
     return total
 }
